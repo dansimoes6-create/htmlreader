@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Claude Opus 4.5 - Streaming</title>
+</head>
+<body>
+
+<h2>Claude Opus 4.5 (Streaming)</h2>
+<pre id="output"></pre>
+
+<script src="https://js.puter.com/v2/"></script>
+
+<script>
+async function gerarResposta() {
+    try {
+        const response = await puter.ai.chat(
+            "Crie um texto detalhado explicando como funciona um jogo RPG de turnos.",
+            {
+                model: "claude-opus-4-5",
+                stream: true
+            }
+        );
+
+        for await (const chunk of response) {
+            if (chunk?.text) {
+                document.getElementById("output").innerText += chunk.text;
+            }
+        }
+    } catch (error) {
+        console.error(error);
+        document.getElementById("output").innerText = "Erro no streaming.";
+    }
+}
+
+gerarResposta();
+</script>
+
+</body>
+</html>
