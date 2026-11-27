@@ -1,0 +1,11 @@
+services:
+  clipador:
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./data:/data
+    env_file:
+      - path: .env
+        required: false
+    restart: unless-stopped

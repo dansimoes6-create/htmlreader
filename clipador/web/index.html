@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Clipador</title>
+<meta name="theme-color" content="#0e0d12">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%23ff6b2c'/><path d='M18 4 9 18h6l-2 10 10-15h-6z' fill='white'/></svg>">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="auth" class="auth hidden">
+  <form class="auth-card" id="authForm">
+    <div class="logo big"><span class="logo-mark">⚡</span> Clipador</div>
+    <p class="muted" id="authHint">Cortes automáticos das suas lives.</p>
+    <label>Usuário<input name="username" autocomplete="username" required></label>
+    <label>Senha<input name="password" type="password" autocomplete="current-password" required></label>
+    <button class="btn primary wide" id="authBtn">Entrar</button>
+    <p class="err" id="authErr"></p>
+  </form>
+</div>
+
+<div id="shell" class="hidden">
+  <header class="top">
+    <div class="logo"><span class="logo-mark">⚡</span> Clipador</div>
+    <nav class="tabs" id="tabs">
+      <a href="#painel" data-tab="painel">Painel</a>
+      <a href="#canais" data-tab="canais">Canais</a>
+      <a href="#cortes" data-tab="cortes">Cortes</a>
+      <a href="#fila" data-tab="fila">Fila</a>
+      <a href="#config" data-tab="config">Configurações</a>
+    </nav>
+    <button class="btn ghost small" id="logoutBtn" title="Sair">Sair</button>
+  </header>
+
+  <main id="view"></main>
+
+  <nav class="bottom-nav" id="bottomNav">
+    <a href="#painel" data-tab="painel"><span>▦</span>Painel</a>
+    <a href="#canais" data-tab="canais"><span>📡</span>Canais</a>
+    <a href="#cortes" data-tab="cortes"><span>✂</span>Cortes</a>
+    <a href="#fila" data-tab="fila"><span>⏳</span>Fila</a>
+    <a href="#config" data-tab="config"><span>⚙</span>Ajustes</a>
+  </nav>
+</div>
+
+<div id="modal" class="modal hidden" role="dialog" aria-modal="true">
+  <div class="modal-card" id="modalCard"></div>
+</div>
+<div id="toast" class="toast hidden"></div>
+
+<script src="app.js"></script>
+</body>
+</html>
