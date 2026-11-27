@@ -120,7 +120,7 @@ def open_live_stream(url: str, quality: str = "best") -> subprocess.Popen:
     """Abre o fluxo ao vivo e devolve um processo que escreve MPEG-TS no stdout."""
     if shutil.which("streamlink"):
         q = quality if quality == "best" else f"{quality},best"
-        cmd = ["streamlink", "--stdout", "--loglevel", "warning", "--twitch-disable-ads",
+        cmd = ["streamlink", "--stdout", "--loglevel", "warning",
                "--hls-live-restart", url, q]
     else:
         fmt = "best" if quality == "best" else f"best[height<={re.sub(r'[^0-9]', '', quality) or 1080}]/best"
