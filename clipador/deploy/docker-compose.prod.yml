@@ -1,0 +1,27 @@
+# Produção: o Clipador atrás do Caddy, com HTTPS automático.
+# Uso (a partir da pasta clipador/):
+#   DOMAIN=meusite.com docker compose -f docker-compose.yml -f deploy/docker-compose.prod.yml up -d --build
+services:
+  clipador:
+    ports: !reset []
+    expose:
+      - "8000"
+
+  caddy:
+    image: caddy:2.8
+    restart: unless-stopped
+    depends_on:
+      - clipador
+    ports:
+      - "80:80"
+      - "443:443"
+    environment:
+      DOMAIN: ${DOMAIN:?defina DOMAIN, ex. 1-2-3-4.sslip.io}
+    volumes:
+      - ./deploy/Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data
+      - caddy_config:/config
+
+volumes:
+  caddy_data:
+  caddy_config:

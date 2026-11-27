@@ -36,7 +36,18 @@ Você cola o canal e ele faz o resto: grava a live em blocos de 10 minutos, acha
 
 ## Como rodar
 
-### Docker (mais fácil)
+### Colocar o site no ar (para usar do celular, 24 h)
+É um site que precisa de um servidor ligado o tempo todo, porque ele grava as lives. O jeito mais simples é alugar um servidor Linux (VPS) com **Ubuntu 22.04 ou 24.04**, pelo menos **4 vCPU, 8 GB de RAM e 80 GB de disco** (Hetzner, Contabo, DigitalOcean, Oracle Cloud, Magalu Cloud…). Depois entre nele por SSH e rode **um comando**:
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/dansimoes6-create/htmlreader/ccr-54468cea-g5zv1a/clipador/deploy/install.sh | sudo bash
+```
+
+No fim ele mostra o endereço do site, algo como `https://203-0-113-10.sslip.io`, já com HTTPS e sem precisar comprar domínio. Abra no celular, toque em **Criar minha conta** e cole um canal. Para usar um domínio seu, aponte o DNS para o IP do servidor e rode `sudo DOMAIN=clipes.seudominio.com bash /opt/clipador/clipador/deploy/install.sh`. O mesmo comando atualiza o site quando houver versão nova.
+
+> Crie sua conta logo depois de instalar: a primeira pessoa que abrir o site vira a dona dele.
+
+### Docker no seu computador
 ```bash
 cd clipador
 cp .env.example .env        # opcional: coloque ANTHROPIC_API_KEY etc.
