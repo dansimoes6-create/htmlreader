@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Vidaverso</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Vidaverso: simulador de vida em texto. Nasça, estude, trabalhe, ame, envelheça e deixe herdeiros.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Figtree:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="app">
+  <header id="top"></header>
+  <main id="logwrap" aria-live="polite"><div id="log"></div></main>
+  <section id="stats" aria-label="Atributos"></section>
+  <nav id="nav" aria-label="Navegação principal">
+    <button data-nav="occ" id="nav-occ"><b>💼</b><span>Ocupação</span></button>
+    <button data-nav="assets"><b>🏠</b><span>Bens</span></button>
+    <button data-nav="age" class="age"><b>+</b>1 ano</button>
+    <button data-nav="rel"><b>❤️</b><span>Relações</span></button>
+    <button data-nav="act"><b>🎯</b><span>Atividades</span></button>
+  </nav>
+</div>
+<div id="sheets"></div>
+<div id="screen"></div>
+<div id="dialogs"></div>
+<div id="toasts"></div>
+<script src="js/util.js"></script>
+<script src="js/data.js"></script>
+<script src="js/core.js"></script>
+<script src="js/health.js"></script>
+<script src="js/relations.js"></script>
+<script src="js/career.js"></script>
+<script src="js/special.js"></script>
+<script src="js/supernatural.js"></script>
+<script src="js/crime.js"></script>
+<script src="js/activities.js"></script>
+<script src="js/assets.js"></script>
+<script src="js/minigames.js"></script>
+<script src="js/events.js"></script>
+<script src="js/meta.js"></script>
+<script src="js/ui.js"></script>
+</body>
+</html>
